@@ -8,4 +8,4 @@ If you want to manually extract features from Hindustani classical song files, i
 
 Feel free to contact me at anushabhowmick@ymail.com for more details on the implementation (and if you find anything missing, sorry :p)
 
-I basically reverse engineered this. Decide what I wanted to build and then learnt about Machine Learning :] So I know there must be many mistakes and this is not the most optimal solution, but I got what I wanted to create at the end. I'd love to have more guidance, and build more on themes like this (music + tech + visual art + immersive experience based on emotions)...perhaps you'll see more repositories here on the same.
+I basically reverse engineered this. Decide what I wanted to build and then learnt about Machine Learning :] So I know there must be many mistakes and this is not the most optimal solution, but I got what I wanted to create at the end. I'd love to have more guidance, and build more on themes like this (music + tech + visual art + immersive experience based on emotions)...perhaps you'll see more repositories here on the same in the future.

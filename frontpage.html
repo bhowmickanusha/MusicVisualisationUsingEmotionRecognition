@@ -1,0 +1,102 @@
+<html>
+<head>
+<title>Choose your input songfile</title>
+</head>
+<style>
+.combo{
+padding:10px;
+}
+.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+</style>
+<h1>Choose an audio file</h1>
+<body>
+<select class="combo" id="select1">
+<option value="Select">Select....</option>
+<option value="html">HTML 5</option>
+<option value="css">CSS 3</option>
+<option value="javascript">Javascript/Ajax</option>
+<option value="bootstrap">Bootstrap</option>
+<option value="react">React JS</option>
+<option value="vue">Vue JS</option>
+<option value="2">Angular 2</option>
+<option value="4">Angular 4</option>
+<option value="5">Angular 5</option>
+<option value="6">Angular 6</option>
+<option value="7">Angular 7</option>
+<option value="8">Angular 8</option>
+<option value="CSS fw">CSS framework</option>
+<option value="rw">Responsive Web Design</option>
+<option value="dom">DOM scripting</option>
+<option value="preprocessors">Saas, Less</option>
+<option value="api">HTML 5 API</option></select>
+
+<button onclick="getOption()" class="button button1">Green</button>
+<!--
+<button class="button button2">Blue</button>
+-->
+
+</body>
+
+<script type="text/javascript">
+
+	function getOption() { 
+            selectElement =  
+                    document.querySelector('#select1'); 
+                      
+            output = selectElement.value; 
+
+	 const textToBLOB = new Blob([data], { type: 'text/plain' });
+        const sFileName = 'formData.txt';	   // The file to save the data.
+
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        }
+        else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+        newLink.click(); 
+  
+        } 
+    
+</script>
+</html>

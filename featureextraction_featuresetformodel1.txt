@@ -1,0 +1,25 @@
+filename='featuresfordatamodel1.xlsx';
+
+myDir = uigetdir; %gets directory
+myFiles = dir(fullfile(myDir,'*.mp3')); %gets all mp3 files in struct
+for k = 1:length(myFiles)
+  	baseFileName = myFiles(k).name;
+  	fullFileName = fullfile(myDir, baseFileName);
+  	fprintf(1, 'Now reading %s\n', fullFileName);
+  	
+  % all of your actions for filtering and plotting go here
+	smpl=miraudio(fullFileName);
+	attacktime=mirstat(mirattacktime(smpl,'Lin')).Mean;
+	zerocross=mirstat(mirzerocross(smpl,'Frame')).Mean;
+	spectrum=mirspectrum(smpl,'Frame');
+	rolloff=mirstat(mirrolloff(spectrum)).Mean;
+	bright=mirstat(mirbrightness(spectrum)).Mean;
+	centroid=mirstat(mircentroid(spectrum)).Mean;
+	pksfromspectrum=mirpeaks(spectrum);
+	roughness=mirstat(mirroughness(pksfromspectrum)).Mean;
+	reg=mirstat(mirregularity(pksfromspectrum)).Mean;
+	pitch=mirstat(mirpitch(pksfromspectrum)).Mean;
+
+	arrsmpl=[fullFileName,attacktime, zerocross, rolloff, bright, centroid,roughness,reg,pitch];
+	writematrix(arrsmpl,filename,'WriteMode','append');
+end

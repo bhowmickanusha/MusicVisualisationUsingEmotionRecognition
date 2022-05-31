@@ -8,5 +8,5 @@ If you want to run the code, download all the files here to your local computer.
 Make sure you have Java, Processing and Python installed on your computer.
 If you want to manually extract features from Hindustani classical song files, install Matlab and mirtoolbox, and run the code given in featureextraction_featuresetformodel1.txt on Matlab (this is not the complete code. matlab code for model2 will be uploaded soon.)
 
-Feel free to contact me at anushabhowmick@ymail.com for more details on the implementation (and if you find anything missing, sorry :p)
+Feel free to contact me at anushabhowmick@ymail.com for more details on the implementation
 

@@ -14,7 +14,7 @@ You would also need to manually classify your music files into Valence & Arousal
 on the basis of the below diagram 
 ![image](https://user-images.githubusercontent.com/57823096/191508988-8413bbaa-ac07-4bf3-a22a-919a61ddec77.png)
 
-to create your own datamodel1.csv and datamodel2.csv (since there is no preexisting dataset of songs and their corresponding valence/arousal emotion class).
+to create your own datamodel1.csv and datamodel2.csv datasets.
 
 
 

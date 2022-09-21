@@ -1,0 +1,95 @@
+
+<html>
+<head>
+<script type="text/javascript" src="processing.js"></script>
+<title>Page for user to select song</title>
+</head>
+<style>
+.combo{
+padding:10px;
+}
+.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+</style>
+<h1>Choose an audio file</h1>
+<body>
+
+<select class="combo" id="select1">
+<option value="Select">Select....</option>
+<option value="Raga Tilak Kamod-[AudioTrimmer.com]6.mp3">Raga Tilak Kamod-[AudioTrimmer.com]6.mp3</option>
+<option value="Romantic Dhun-[AudioTrimmer.com]6.mp3">Romantic Dhun-[AudioTrimmer.com]6.mp3</option>
+<option value="Taaron Bhari Raat - Raga Malkauns - Raga Malkauns - Drut Ektala-[AudioTrimmer.com]6.mp3">Taaron Bhari Raat - Raga Malkauns - Raga Malkauns - Drut Ektala-[AudioTrimmer.com]6.mp3</option>
+<option value="Tabla Solo In Ektal - Live-[AudioTrimmer.com]6.mp3">Tabla Solo In Ektal - Live-[AudioTrimmer.com]6.mp3</option>
+<option value="Thumri In Raag Misra Mand Morey Saiyan Bedardi In Keherva-[AudioTrimmer.com]6.mp3">Thumri In Raag Misra Mand Morey Saiyan Bedardi In Keherva-[AudioTrimmer.com]6.mp3</option>
+
+</select>
+
+<button onclick="getOption()" class="button button1">Run sketch</button>
+<!--
+<button class="button button2">Blue</button>
+-->
+<canvas id="canvas1" data-processing-sources="FAudioWaveform.pde"></canvas>
+</body>
+
+<script type="text/javascript">
+
+	function getOption() { 
+            selectElement =  
+                    document.querySelector('#select1'); 
+                      
+            output = selectElement.value; 
+
+	 const textToBLOB = new Blob([output], { type: 'text/plain' });
+        const sFileName = 'formData.txt';	   // The file to save the data.
+
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        }
+        else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+        newLink.click(); 
+  
+        } 
+    
+</script>
+</html>
